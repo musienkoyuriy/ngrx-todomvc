@@ -8,7 +8,8 @@
     "start": "ng serve",
     "test": "ng test",
     "pree2e": "webdriver-manager update --standalone false --gecko false",
-    "e2e": "protractor"
+    "e2e": "protractor",
+    "lint": "ng lint --type-check"
   },
   "private": true,
   "dependencies": {
@@ -21,8 +22,10 @@
     "@angular/platform-browser-dynamic": "^2.3.1",
     "@angular/router": "^3.3.1",
     "core-js": "^2.4.1",
+    "ngrx": "^2.0.0",
     "rxjs": "^5.0.1",
     "ts-helpers": "^1.1.1",
+    "tslint-config-valorsoft": "^2.0.0",
     "zone.js": "^0.7.2"
   },
   "devDependencies": {
