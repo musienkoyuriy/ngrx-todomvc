@@ -1,7 +1,7 @@
 import { Action } from '@ngrx/store';
 import { FiltersActions } from '../actions/filters.actions';
 
-export const filtersReducer = (state = 'SHOW_ALL', action: Action) => {
+export function filtersReducer (state = 'SHOW_ALL', action: Action) {
   switch (action.type) {
     case FiltersActions.SET_FILTER:
       return action.payload;

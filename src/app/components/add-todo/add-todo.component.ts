@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Output, EventEmitter } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { TodosActions } from '../../actions/todos.actions';
 import { Todo } from '../../models/Todo';
@@ -13,6 +13,7 @@ import { Todo } from '../../models/Todo';
   `
 })
 export class AddTodoComponent {
+  public add: EventEmitter<Todo> = new EventEmitter<Todo>();
   public title = '';
 
   constructor(private store: Store<{}>, private todosActions: TodosActions) {}
@@ -23,7 +24,6 @@ export class AddTodoComponent {
       title: this.title,
       done: false
     };
-
-    this.store.dispatch(this.todosActions.addTodo(todo));
+    this.add.emit(todo);
   }
 }

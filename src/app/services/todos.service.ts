@@ -12,8 +12,8 @@ export class TodosService {
     const todos: Todo[] = [
       { id: 1, title: 'Learn Angular', done: true },
       { id: 2, title: 'Learn FP', done: false },
-      { id: 2, title: 'Learn RxJS', done: false },
-      { id: 3, title: 'Learn @ngrx', done: false }
+      { id: 3, title: 'Learn RxJS', done: false },
+      { id: 4, title: 'Learn @ngrx', done: false }
     ];
 
     return Observable.timer(1000).mapTo(this.getVisibleTodos(todos, filter));

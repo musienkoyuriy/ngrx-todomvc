@@ -12,6 +12,8 @@ export function todosReducer(state = initialState, action: Action) {
   let todos: Todo[];
 
   switch (action.type) {
+    case TodosActions.GET_TODOS:
+      return Object.assign({}, state, { pending: false, error: null });
     case TodosActions.ADD_TODO:
       todos = [...state.data, action.payload];
 

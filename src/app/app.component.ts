@@ -16,7 +16,7 @@ import { TodosService } from './services/todos.service';
              (changeFilter)="changeFilter($event)">
     </filters>
     <todos [todos]="todosModel$ | async"></todos>
-    <add-todo></add-todo>
+    <add-todo (add)="addTodo($event)"></add-todo>
   `
 })
 export class AppComponent {
@@ -41,5 +41,9 @@ export class AppComponent {
 
   public changeFilter(filterState: string): void {
     this.store.dispatch(this.filtersActions.setFilter(filterState));
+  }
+
+  public addTodo(todo: Todo): void {
+    this.store.dispatch(this.todosActions.addTodo(todo));
   }
 }
